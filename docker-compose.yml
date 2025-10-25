@@ -1,0 +1,33 @@
+
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.conf.template:/etc/nginx/nginx.conf.template
+    environment:
+      - PORT=${PORT}
+      - ACTIVE_POOL=${ACTIVE_POOL}
+    depends_on:
+      - app_blue
+      - app_green
+    entrypoint: /bin/sh -c "
+      envsubst < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf &&
+      nginx -g 'daemon off;'"
+
+  app_blue:
+    image: ${BLUE_IMAGE}
+    environment:
+      - RELEASE_ID=${RELEASE_ID_BLUE}
+      - PORT=${PORT}
+    ports:
+      - "8081:${PORT}"
+
+  app_green:
+    image: ${GREEN_IMAGE}
+    environment:
+      - RELEASE_ID=${RELEASE_ID_GREEN}
+      - PORT=${PORT}
+    ports:
+      - "8082:${PORT}"
