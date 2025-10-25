@@ -7,8 +7,8 @@ http {
     default_type  application/octet-stream;
 
     upstream backend {
-        server app_blue max_fails=1 fail_timeout=3s;
-        server app_green backup;
+        server app_blue:${PORT} max_fails=1 fail_timeout=3s;
+        server app_green:${PORT} backup;
     }
 
     server {

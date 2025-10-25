@@ -19,6 +19,7 @@ services:
     image: ${BLUE_IMAGE}
     environment:
       - RELEASE_ID=${RELEASE_ID_BLUE}
+      - APP_POOL=${APP_POOL_BLUE}
       - PORT=${PORT}
     ports:
       - "8081:${PORT}"
@@ -27,6 +28,7 @@ services:
     image: ${GREEN_IMAGE}
     environment:
       - RELEASE_ID=${RELEASE_ID_GREEN}
+      - APP_POOL=${APP_POOL_GREEN}
       - PORT=${PORT}
     ports:
       - "8082:${PORT}"
