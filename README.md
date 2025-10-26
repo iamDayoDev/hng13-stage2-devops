@@ -27,7 +27,7 @@ This repository contains the solution for the HNGi 13 Stage 2 DevOps task, which
    ```
 3. Build and start the Docker containers:
     ```bash
-    docker-compose up --build -d
+    docker-compose up -d
     ```
 4. Access the application:
    Open your web browser and navigate to `http://localhost:8080/` to see the application running.
