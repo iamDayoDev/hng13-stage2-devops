@@ -58,7 +58,7 @@ curl -i http://localhost:8080/version
 curl -X POST http://localhost:8081/chaos/stop
 ```
 
-## SERVER_IP = 13.52.255.187
+## SERVER_IP = 184.169.196.141
 
 Replace `localhost` with `SERVER_IP` to test on the deployed AWS EC2 instance.
 
