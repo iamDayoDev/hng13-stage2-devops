@@ -62,7 +62,8 @@ curl -X POST http://localhost:8081/chaos/stop
 
 Replace `localhost` with `SERVER_IP` to test on the deployed AWS EC2 instance.
 
-```http://SERVER_IP:8080/
+```bash
+http://SERVER_IP:8080/
 http://SERVER_IP:8080/version
 http://SERVER_IP:8081/chaos/start?mode=error
 http://SERVER_IP:8081/chaos/stop
