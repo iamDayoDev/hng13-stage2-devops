@@ -19,13 +19,16 @@ This repository contains the solution for the HNGi 13 Stage 2 DevOps task, which
 ## Setup Instructions
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/iamDayoDev/hng13-stage2-devops.git
+
 2. Navigate to the project directory:
    ```bash
    cd hng13-stage2-devops
+   ```
 3. Build and start the Docker containers:
     ```bash
     docker-compose up --build -d
+    ```
 4. Access the application:
    Open your web browser and navigate to `http://localhost:8080/` to see the application running.
 
@@ -41,6 +44,6 @@ curl -X POST http://localhost:8081/chaos/start?mode=error
 ```
 
 ```bash
-    curl -X POST http://localhost:8081/chaos/stop
+curl -X POST http://localhost:8081/chaos/stop
 ```
 
