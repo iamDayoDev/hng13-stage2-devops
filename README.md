@@ -48,7 +48,7 @@ curl -i http://localhost:8080/version
 ```bash
 curl -X POST http://localhost:8081/chaos/start?mode=error
 ```
-## Watch the application switch from Blue to Green environment upon failure simulation.
+Watch the application switch from Blue to Green environment upon failure simulation.
 
 ```bash
 curl -i http://localhost:8080/version
@@ -59,3 +59,11 @@ curl -X POST http://localhost:8081/chaos/stop
 ```
 
 ## SERVER_IP = 13.52.255.187
+
+Replace `localhost` with `SERVER_IP` to test on the deployed AWS EC2 instance.
+
+```http://SERVER_IP:8080/
+http://SERVER_IP:8080/version
+http://SERVER_IP:8081/chaos/start?mode=error
+http://SERVER_IP:8081/chaos/stop
+```
